@@ -1,0 +1,73 @@
+import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
+import nav from "../data/nav.json"
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
+const Footer = () => {
+    const [navigation, setNavigation] = useState(nav);
+    const handleSection = (item) => {
+        const navi = navigation.map((e) => {
+            if (e.id === item.id) {
+                return { ...e, current: true }
+            }
+            else {
+                return { ...e, current: false }
+            }
+        })
+        setNavigation(navi)
+    }
+    return (
+        <footer className="bg-gray-50 border-t border-gray-200 py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Top Section */}
+                <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+                    {/* Logo and Description */}
+                    <div className="text-center md:text-left">
+                        <div className="flex items-center justify-center md:justify-start space-x-2">
+                            <div className="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center">
+                                <span className="text-purple-600 font-bold text-xl">UI</span>
+                            </div>
+                            <span className="text-lg font-semibold text-gray-800">Untitled UI</span>
+                        </div>
+                        <p className="text-gray-600 text-sm mt-2">
+                            Design amazing digital experiences that create more happy in the world.
+                        </p>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="flex flex-wrap justify-center space-x-4">
+                        {navigation.map((item) => (
+                            <Link
+                                key={item.id}
+                                to={item.name}
+                                smooth={true}
+                                duration={500}
+                                className="text-gray-600 hover:text-gray-900 text-sm font-medium cursor-pointer"
+                                onClick={() => handleSection(item)}
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Bottom Section */}
+                <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+                    <p>© 2077 Untitled UI. All rights reserved.</p>
+                    <div className="flex space-x-4 mt-4 md:mt-0">
+                        <a href="#" className="hover:text-gray-800">🕊️</a>
+                        <a href="#" className="hover:text-gray-800">🌐</a>
+                        <a href="#" className="hover:text-gray-800">👤</a>
+                        <a href="#" className="hover:text-gray-800">💻</a>
+                        <a href="#" className="hover:text-gray-800">🎨</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
