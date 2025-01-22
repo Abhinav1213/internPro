@@ -11,9 +11,9 @@ function classNames(...classes) {
 export default function Navbar() {
     const [navigation, setNavigation] = useState(nav);
 
-    useEffect(() => {
-        console.log(navigation)
-    },[navigation])
+    // useEffect(() => {
+    //     console.log(navigation)
+    // },[navigation])
 
     const handleSection = (item, close) => {
         const navi = navigation.map((e) => {

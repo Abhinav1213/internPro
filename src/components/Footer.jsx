@@ -1,5 +1,7 @@
 import { Link } from "react-scroll";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaSquareInstagram } from "react-icons/fa6";
 import nav from "../data/nav.json"
 
 function classNames(...classes) {
@@ -44,6 +46,7 @@ const Footer = () => {
                                 key={item.id}
                                 to={item.name}
                                 smooth={true}
+                                offset={-100}
                                 duration={500}
                                 className="text-gray-600 hover:text-gray-900 text-sm font-medium cursor-pointer"
                                 onClick={() => handleSection(item)}
@@ -58,11 +61,25 @@ const Footer = () => {
                 <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
                     <p>© 2077 Untitled UI. All rights reserved.</p>
                     <div className="flex space-x-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-gray-800">🕊️</a>
-                        <a href="#" className="hover:text-gray-800">🌐</a>
-                        <a href="#" className="hover:text-gray-800">👤</a>
-                        <a href="#" className="hover:text-gray-800">💻</a>
-                        <a href="#" className="hover:text-gray-800">🎨</a>
+                        <div className="flex space-x-4">
+                            <a
+                                href="https://www.linkedin.com/in/kedu/"
+                                className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <IoLogoLinkedin className="w-6 h-6" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/"
+                                className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaSquareInstagram className="w-6 h-6" />
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
