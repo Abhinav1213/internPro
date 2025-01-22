@@ -3,7 +3,9 @@ import emailjs from "emailjs-com";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const ContactUs = () => {
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -19,46 +21,45 @@ const ContactUs = () => {
         setFormData((prevData) => ({ ...prevData, [id]: value }));
     };
 
-    const handleSubmit = (e) => {
+    // console.log(import.meta.env.VITE_SERVICE_ID);
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSending(true);
-        emailjs
-            .send(
-                import.meta.env.SERVICE_ID,
-                import.meta.env.TEMPLETE_ID,
-                {
-                    first_name: formData.firstName,
-                    last_name: formData.lastName,
-                    email: formData.email,
-                    phone: formData.phone,
-                    message: formData.message,
-                    to_email: "abhinavr9955@gmail.com",
-                },
-                import.meta.env.EMAIJS_API
-            )
-            .then(
-                () => {
-                    setIsSending(false);
-                    toast.success("Message sent successfully!");
-                    setFormData({
-                        firstName: "",
-                        lastName: "",
-                        email: "",
-                        phone: "",
-                        message: "",
-                    });
-                },
-                (error) => {
-                    setIsSending(false);
-                    toast.error("Failed to send message. Please try again.");
-                    console.error("EmailJS error:", error);
-                }
-            );
+        try {
+            await emailjs
+                .send(
+                    import.meta.env.VITE_SERVICE_ID,
+                    import.meta.env.VITE_TEMPLETE_ID,
+                    {
+                        first_name: formData.firstName,
+                        last_name: formData.lastName,
+                        email: formData.email,
+                        phone: formData.phone,
+                        message: formData.message,
+                        to_email: "abhinavr9955@gmail.com",
+                    },
+                    import.meta.env.VITE_EMAIJS_API
+                )
+            setIsSending(false);
+            toast.success("Message sent successfully!");
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                message: "",
+            });
+        }
+        catch (err) {
+            setIsSending(false);
+            toast.error("Failed to send message. Please try again.");
+            console.error("EmailJS error:", err);
+        }
     };
 
     return (
         <div
-            className="min-h-screen bg-gradient-to-r from-blue-100 via-white to-blue-50 flex items-center justify-center p-4 sm:p-6"
+            className="bg-gradient-to-r from-blue-100 via-white to-blue-50 flex items-center justify-center p-4 sm:p-6"
             id="Contact"
         >
             <div className="max-w-7xl w-full bg-white rounded-lg shadow-lg flex flex-wrap">
