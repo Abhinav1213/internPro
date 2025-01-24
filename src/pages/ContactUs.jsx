@@ -78,13 +78,13 @@ const ContactUs = () => {
                         <div className="flex items-center space-x-3 sm:space-x-4">
                             <span className="material-icons text-gray-500">phone</span>
                             <p className="text-sm sm:text-base text-gray-700">
-                                +1 (555) 234-5678
+                                +(91) 9930311622
                             </p>
                         </div>
                         <div className="flex items-center space-x-3 sm:space-x-4">
                             <span className="material-icons text-gray-500">email</span>
                             <p className="text-sm sm:text-base text-gray-700">
-                                hello@example.com
+                            aakash@anupcapital.com
                             </p>
                         </div>
                     </div>

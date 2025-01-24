@@ -1,31 +1,81 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { 
+  AcademicCapIcon, 
+  ChartPieIcon, 
+  CogIcon, 
+  ClipboardDocumentListIcon 
+} from "@heroicons/react/24/outline";
 
 const features = [
   {
-    name: 'Push to deploy',
-    description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+    name: "Quantitative Research",
+    description: (
+      <>
+        <ul className="list-disc ml-5">
+          <li>
+            Our research team specializes in exploring advanced concepts like Community Detection, Network Analysis, and Centrality Measures to uncover hidden patterns in financial markets.
+          </li>
+          <li>
+            We utilize state-of-the-art algorithms such as Louvain and Newman methods to build comprehensive market graphs, offering unique insights into market structure and dynamics.
+          </li>
+        </ul>
+      </>
+    ),
+    icon: AcademicCapIcon, // Represents research and advanced learning
   },
   {
-    name: 'SSL certificates',
-    description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+    name: "Data-Driven Investment Strategies",
+    description: (
+      <>
+        <ul className="list-disc ml-5">
+          <li>
+            Our proprietary trading models are designed to capitalize on market inefficiencies. Strategies include:
+            <ul className="list-square ml-5">
+              <li>
+                <strong>Co-Integrated Pairs Arbitrage:</strong> Exploiting statistical relationships between stocks for mean reversion opportunities.
+              </li>
+              <li>
+                <strong>Peripheral Stocks Strategy:</strong> Using graph theory to identify and capitalize on undervalued stocks on the market’s periphery.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </>
+    ),
+    icon: ChartPieIcon, // Represents financial and investment strategies
   },
   {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+    name: "Innovative Tools and Technology",
+    description: (
+      <>
+        <ul className="list-disc ml-5">
+          <li>
+            We integrate cutting-edge technologies like machine learning, GARCH models, and Relative Rotation Graphs (RRG) to provide actionable insights.
+          </li>
+          <li>
+            Our robust backtesting engines ensure that every strategy is thoroughly validated for reliability and performance.
+          </li>
+        </ul>
+      </>
+    ),
+    icon: CogIcon, // Represents tools, technology, and innovation
   },
   {
-    name: 'Advanced security',
-    description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+    name: "Custom Portfolio Management",
+    description: (
+      <>
+        <ul className="list-disc ml-5">
+          <li>
+            Skylife Research offers bespoke portfolio solutions tailored to each client’s goals and risk appetite.
+          </li>
+          <li>
+            Our emphasis on risk-adjusted returns ensures sustainable growth over time.
+          </li>
+        </ul>
+      </>
+    ),
+    icon: ClipboardDocumentListIcon, // Represents portfolio management and planning
   },
-]
+];
 
 export default function AboutUs() {
   return (
@@ -34,23 +84,40 @@ export default function AboutUs() {
       id="About"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* What We Do Section */}
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+          <h2 className="text-base/7 font-semibold text-indigo-600">About Us</h2>
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            Everything you need to deploy your app
-          </p>
-          <p className="mt-6 2*text-sm sm:text-lg/8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar
-            et feugiat blandit at. In mi viverra elit nunc.
+            What We Do
           </p>
         </div>
+
+        {/* Our Core Technologies Section */}
+        <div className="mx-auto mt-10 max-w-2xl lg:mt-15 lg:text-left">
+          <h3 className="text-xl font-semibold text-gray-900">Our Core Technologies</h3>
+          <ul className="mt-4 space-y-4 text-sm text-gray-600">
+            <li>
+              <strong>Network Analysis:</strong> Creating market maps to identify clusters, central stocks, and peripheral opportunities.
+            </li>
+            <li>
+              <strong>Machine Learning:</strong> Using predictive models to identify trends and anomalies.
+            </li>
+            <li>
+              <strong>AWS-Powered Infrastructure:</strong> Scalable cloud-based solutions for efficient data storage and processing.
+            </li>
+            <li>
+              <strong>Historical Data Integration:</strong> Leveraging Angel One data to build comprehensive models and trading strategies.
+            </li>
+          </ul>
+        </div>
+
+        {/* Features Section */}
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-            
             {features.map((feature) => (
               <div
                 key={feature.name}
-                className=" p-6 bg-gradient-to-r from-gray-50 to-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="p-6 bg-gradient-to-r from-gray-50 to-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <dt className="flex items-center text-base font-semibold text-gray-900">
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 mr-4">
@@ -58,13 +125,15 @@ export default function AboutUs() {
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-4 text-sm text-gray-600 leading-relaxed">{feature.description}</dd>
+                <dd className="mt-4 text-sm text-gray-600 leading-relaxed">
+                  {feature.description}
+                </dd>
               </div>
             ))}
-
           </dl>
         </div>
       </div>
     </div>
-  )
+  );
 }
+
