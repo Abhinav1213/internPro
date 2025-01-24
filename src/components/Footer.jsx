@@ -10,6 +10,7 @@ function classNames(...classes) {
 
 const Footer = () => {
     const [navigation, setNavigation] = useState(nav);
+
     const handleSection = (item) => {
         const navi = navigation.map((e) => {
             if (e.id === item.id) {
@@ -46,7 +47,7 @@ const Footer = () => {
                                 key={item.id}
                                 to={item.name}
                                 smooth={true}
-                                offset={-100}
+                                offset={-70}
                                 duration={500}
                                 className="text-gray-600 hover:text-gray-900 text-sm font-medium cursor-pointer"
                                 onClick={() => handleSection(item)}

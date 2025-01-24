@@ -1,7 +1,7 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-scroll'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import nav from "../data/nav.json"
 
 function classNames(...classes) {
@@ -10,34 +10,69 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [navigation, setNavigation] = useState(nav);
+    const sectionRefs = useRef({});
+    useEffect(() => {
+        sectionRefs.current = navigation.reduce((acc, item) => {
+            acc[item.name] = document.getElementById(item.name);
+            return acc;
+        }, {});
+        
+        console.log(sectionRefs.current);
+    },[])
+    useEffect(() => {
+        const observerOptions = {
+            root: null, 
+            rootMargin: "0px 0px 0px 0px", 
+            threshold: 0.5
+        };
 
-    // useEffect(() => {
-    //     console.log(navigation)
-    // },[navigation])
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setNavigation((prevNav) =>
+                        prevNav.map((item) => ({
+                            ...item,
+                            current: item.name === entry.target.id
+                        }))
+                    );
+                }
+            });
+        };
 
-    const handleSection = (item, close) => {
-        const navi = navigation.map((e) => {
-            if (e.id === item.id) {
-                return { ...e, current: true }
-            }
-            else {
-                return { ...e, current: false }
-            }
-        })
-        setNavigation(navi)
-        close
-    }
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe each section
+        Object.values(sectionRefs.current).forEach((section) => {
+            if (section) observer.observe(section);
+        });
+
+        return () => {
+            // Cleanup observers on unmount
+            Object.values(sectionRefs.current).forEach((section) => {
+                if (section) observer.unobserve(section);
+            });
+        };
+    }, [navigation]);
+
+    const handleSectionClick = (item) => {
+        setNavigation((prevNav) =>
+            prevNav.map((navItem) =>
+                navItem.id === item.id ? { ...navItem, current: true } : { ...navItem, current: false }
+            )
+        );
+    };
+
     return (
-        <div className="sticky top-0">
-            <Disclosure as="nav" className="bg-gray-800 ">
+        <div className="sticky top-0 z-50">
+            <Disclosure as="nav" className="bg-gray-800">
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                 <span className="absolute -inset-0.5" />
                                 <span className="sr-only">Open main menu</span>
-                                <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
-                                <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
+                                <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
+                                <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                             </DisclosureButton>
                         </div>
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -51,17 +86,18 @@ export default function Navbar() {
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex space-x-4">
                                     {navigation.map((item) => (
-                                        <Link to={item.name}
-                                            smooth={true}
+                                        <Link
                                             key={item.id}
+                                            to={item.name}
+                                            smooth={true}
                                             duration={500}
-                                            offset={-100}
+                                            offset={-70} // Adjust based on your header height
                                             aria-current={item.current ? 'page' : undefined}
                                             className={classNames(
                                                 item.current ? 'bg-gray-900 text-white cursor-pointer' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                'rounded-md px-3 py-2 text-sm font-medium cursor-pointer',
+                                                'rounded-md px-3 py-2 text-sm font-medium cursor-pointer'
                                             )}
-                                            onClick={() => { handleSection(item, () => { }) }}
+                                            onClick={() => handleSectionClick(item)}
                                         >
                                             {item.name}
                                         </Link>
@@ -78,8 +114,8 @@ export default function Navbar() {
                                 <Link
                                     to={item.name}
                                     smooth={true}
-                                    offset={-100}
                                     duration={500}
+                                    offset={-70} // Adjust based on your header height
                                     aria-current={item.current ? 'page' : undefined}
                                     className={classNames(
                                         item.current
@@ -87,9 +123,7 @@ export default function Navbar() {
                                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                         'rounded-md px-3 py-2 text-sm font-medium cursor-pointer'
                                     )}
-                                    onClick={() => {
-                                        handleSection(item, Disclosure.close);
-                                    }}
+                                    onClick={() => handleSectionClick(item)}
                                 >
                                     {item.name}
                                 </Link>
@@ -99,5 +133,5 @@ export default function Navbar() {
                 </DisclosurePanel>
             </Disclosure>
         </div>
-    )
+    );
 }
