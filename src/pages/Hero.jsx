@@ -15,9 +15,6 @@ export default function Hero() {
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                                 Skylife Research
                             </h1>
-                            <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-gray-400">
-                                Unlock insights and drive growth with our cutting-edge data solutions.
-                            </p>
                         </div>
                         {/* Right Section */}
                         <div className="flex-none sm:w-1/3 text-center sm:text-right">

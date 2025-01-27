@@ -1,9 +1,4 @@
-import { 
-  AcademicCapIcon, 
-  ChartPieIcon, 
-  CogIcon, 
-  ClipboardDocumentListIcon 
-} from "@heroicons/react/24/outline";
+import { ChartBarIcon, ArrowTrendingUpIcon, CpuChipIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
 
 const features = [
   {
@@ -20,7 +15,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: AcademicCapIcon, // Represents research and advanced learning
+    icon: ChartBarIcon, // Replace with available icon
   },
   {
     name: "Data-Driven Investment Strategies",
@@ -41,7 +36,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: ChartPieIcon, // Represents financial and investment strategies
+    icon: ArrowTrendingUpIcon, // Replace with available icon
   },
   {
     name: "Innovative Tools and Technology",
@@ -57,7 +52,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: CogIcon, // Represents tools, technology, and innovation
+    icon: CpuChipIcon, // Replace with available icon
   },
   {
     name: "Custom Portfolio Management",
@@ -73,9 +68,11 @@ const features = [
         </ul>
       </>
     ),
-    icon: ClipboardDocumentListIcon, // Represents portfolio management and planning
+    icon: BriefcaseIcon, // Replace with available icon
   },
 ];
+
+
 
 export default function AboutUs() {
   return (
