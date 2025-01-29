@@ -83,14 +83,14 @@ export default function AboutUs() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* What We Do Section */}
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-600">About Us</h2>
+          <h2 className="text-base/7 font-semibold text-indigo-600">What We Do</h2>
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            What We Do
+            About Us
           </p>
         </div>
 
         {/* Our Core Technologies Section */}
-        <div className="mx-auto mt-10 max-w-2xl lg:mt-15 lg:text-left">
+        <div className="mx-auto mt-10 max-w-4xl lg:mt-15 lg:text-left">
           <h3 className="text-xl font-semibold text-gray-900">Our Core Technologies</h3>
           <ul className="mt-4 space-y-4 text-sm text-gray-600">
             <li>
@@ -109,12 +109,12 @@ export default function AboutUs() {
         </div>
 
         {/* Features Section */}
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl px-6 sm:px-8 md:px-12">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:max-w-none lg:gap-y-16 items-stretch">
             {features.map((feature) => (
               <div
                 key={feature.name}
-                className="p-6 bg-gradient-to-r from-gray-50 to-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="p-6 bg-gradient-to-r from-gray-50 to-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col"
               >
                 <dt className="flex items-center text-base font-semibold text-gray-900">
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 mr-4">
@@ -122,13 +122,15 @@ export default function AboutUs() {
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-4 text-sm text-gray-600 leading-relaxed">
+                <dd className="mt-4 text-sm text-gray-600 leading-relaxed flex-grow">
                   {feature.description}
                 </dd>
               </div>
             ))}
           </dl>
         </div>
+
+
       </div>
     </div>
   );
