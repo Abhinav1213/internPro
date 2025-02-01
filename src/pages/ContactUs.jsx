@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 
 const ContactUs = () => {
@@ -69,23 +70,26 @@ const ContactUs = () => {
                         Get in touch
                     </h2>
                     <div className="space-y-4">
-                        <div className="flex items-center space-x-3 sm:space-x-4">
-                            <span className="material-icons text-gray-500">location_on</span>
-                            <p className="text-sm sm:text-base text-gray-700">
-                                Mumbai, India
-                            </p>
-                        </div>
-                        <div className="flex items-center space-x-3 sm:space-x-4">
-                            <span className="material-icons text-gray-500">phone</span>
-                            <p className="text-sm sm:text-base text-gray-700">
-                                +(91) 9930311622
-                            </p>
-                        </div>
-                        <div className="flex items-center space-x-3 sm:space-x-4">
-                            <span className="material-icons text-gray-500">email</span>
-                            <p className="text-sm sm:text-base text-gray-700">
-                            aakash@anupcapital.com
-                            </p>
+                        <div className="p-6 bg-gray-50 rounded-lg shadow-md space-y-4">
+                            <div className="flex items-center gap-4 sm:gap-5">
+                                <p className="text-sm sm:text-base text-gray-700">
+                                    Ready to transform your investment approach? Get in touch with Skylife Research today. Let’s build a smarter, more prosperous future together.
+                                </p>
+                            </div>
+
+                            <div className="flex items-center gap-4 sm:gap-5 p-4 bg-white rounded-lg shadow-sm">
+                                <PhoneIcon className="h-6 w-6 text-indigo-600" />
+                                <p className="text-sm sm:text-base text-gray-700 font-medium">
+                                    +(91) 9930311622
+                                </p>
+                            </div>
+
+                            <div className="flex items-center gap-4 sm:gap-5 p-4 bg-white rounded-lg shadow-sm">
+                                <EnvelopeIcon className="h-6 w-6 text-indigo-600" />
+                                <p className="text-sm sm:text-base text-gray-700 font-medium">
+                                    aakash@anupcapital.com
+                                </p>
+                            </div>
                         </div>
                     </div>
 
