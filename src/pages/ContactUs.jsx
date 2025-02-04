@@ -65,29 +65,15 @@ const ContactUs = () => {
         >
             <div className="max-w-7xl w-full bg-white rounded-lg shadow-lg flex flex-wrap">
                 {/* Left Section */}
-                <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-12 flex flex-col space-y-6">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
-                        Get in touch
+                <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-12 flex flex-col space-y-6 items-center">
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800 text-center">
+                        Get in Touch
                     </h2>
-                    <div className="space-y-4">
+                    <div className="space-y-4 w-full">
                         <div className="p-6 bg-gray-50 rounded-lg shadow-md space-y-4">
                             <div className="flex items-center gap-4 sm:gap-5">
-                                <p className="text-sm sm:text-base text-gray-700">
+                                <p className="text-sm sm:text-base text-gray-700 text-center">
                                     Ready to transform your investment approach? Get in touch with Skylife Research today. Let’s build a smarter, more prosperous future together.
-                                </p>
-                            </div>
-
-                            <div className="flex items-center gap-4 sm:gap-5 p-4 bg-white rounded-lg shadow-sm">
-                                <PhoneIcon className="h-6 w-6 text-indigo-600" />
-                                <p className="text-sm sm:text-base text-gray-700 font-medium">
-                                    +(91) 9930311622
-                                </p>
-                            </div>
-
-                            <div className="flex items-center gap-4 sm:gap-5 p-4 bg-white rounded-lg shadow-sm">
-                                <EnvelopeIcon className="h-6 w-6 text-indigo-600" />
-                                <p className="text-sm sm:text-base text-gray-700 font-medium">
-                                    aakash@anupcapital.com
                                 </p>
                             </div>
                         </div>
@@ -96,7 +82,7 @@ const ContactUs = () => {
                     {/* Map Section */}
                     <div className="aspect-w-16 aspect-h-9 w-full">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3771.498976539351!2d73.01316207430318!3d19.04178693614547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDAyJzMwLjQiTiA3M8KwMDEnMDQuOSJF!5e0!3m2!1sen!2sin!4v1737376509318!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1884.8704255636242!2d72.8424941932527!3d19.119021468517936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d0553ed019%3A0xb0e9a300055aea53!2sRaj%20Kailash!5e0!3m2!1sen!2sin!4v1738645864365!5m2!1sen!2sin"
                             className="w-full h-full border-0 rounded-lg"
                             allowFullScreen=""
                             loading="lazy"
@@ -104,6 +90,7 @@ const ContactUs = () => {
                         ></iframe>
                     </div>
                 </div>
+
 
                 {/* Right Section */}
                 <div className="w-full md:w-1/2 bg-gray-50 p-4 sm:p-6 md:p-12">

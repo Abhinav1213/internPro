@@ -11,7 +11,7 @@ function classNames(...classes) {
 export default function Navbar() {
     const [navigation, setNavigation] = useState(nav);
     const sectionRefs = useRef({});
-    
+
     useEffect(() => {
         sectionRefs.current = navigation.reduce((acc, item) => {
             acc[item.name] = document.getElementById(item.name);
@@ -21,8 +21,8 @@ export default function Navbar() {
 
     useEffect(() => {
         const observerOptions = {
-            root: null, 
-            rootMargin: "0px", 
+            root: null,
+            rootMargin: "0px",
             threshold: 0.5
         };
 
@@ -79,12 +79,10 @@ export default function Navbar() {
                                     </DisclosureButton>
                                 </div>
                                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                    <div className="flex shrink-0 items-center">
-                                        <img
-                                            alt="Your Company"
-                                            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                                            className="h-8 w-auto"
-                                        />
+                                    <div className="flex shrink-0 items-center" >
+                                        <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                                            <img alt="Your Company" src="/skylife.svg" className="h-8 w-auto cursor-pointer rounded-lg" />
+                                        </Link>
                                     </div>
                                     <div className="hidden sm:ml-6 sm:block">
                                         <div className="flex space-x-4">
@@ -129,7 +127,7 @@ export default function Navbar() {
                                             )}
                                             onClick={() => {
                                                 handleSectionClick(item);
-                                                close(); 
+                                                close();
                                             }}
                                         >
                                             {item.name}

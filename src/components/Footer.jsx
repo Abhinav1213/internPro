@@ -30,10 +30,10 @@ const Footer = () => {
                     {/* Logo and Description */}
                     <div className="text-center md:text-left">
                         <div className="flex items-center justify-center md:justify-start space-x-2">
-                            <div className="w-8 h-8 bg-purple-200 rounded-full flex items-center justify-center">
-                                <span className="text-purple-600 font-bold text-xl">UI</span>
-                            </div>
-                            <span className="text-lg font-semibold text-gray-800">Untitled UI</span>
+                            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                                <img alt="Your Company" src="/skylife.svg" className="h-8 w-auto cursor-pointer rounded-lg" />
+                            </Link>
+                            <span className="text-lg font-semibold text-gray-800">Skylife Research</span>
                         </div>
                         <p className="text-gray-600 text-sm mt-2">
                             Design amazing digital experiences that create more happy in the world.
@@ -60,7 +60,7 @@ const Footer = () => {
 
                 {/* Bottom Section */}
                 <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
-                    <p>© 2077 Untitled UI. All rights reserved.</p>
+                    <p>© 2077 All rights reserved.</p>
                     <div className="flex space-x-4 mt-4 md:mt-0">
                         <div className="flex space-x-4">
                             <a
@@ -69,15 +69,8 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <IoLogoLinkedin className="w-6 h-6" />
-                            </a>
-                            <a
-                                href="https://www.instagram.com/"
-                                className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaSquareInstagram className="w-6 h-6" />
+                                <IoLogoLinkedin className="w-6 h-6 text-blue-600 hover:text-blue-800 transition-colors duration-300" />
+
                             </a>
                         </div>
 
