@@ -60,17 +60,17 @@ const ContactUs = () => {
 
     return (
         <div
-            className="bg-gradient-to-r from-blue-100 via-white to-blue-50 flex items-center justify-center p-4 sm:p-6"
+            className="bg-gradient-to-r from-blue-100 via-white-100 to-blue-50 flex items-center justify-center p-4 sm:p-6"
             id="Contact"
         >
             <div className="max-w-7xl w-full bg-white rounded-lg shadow-lg flex flex-wrap">
                 {/* Left Section */}
                 <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-12 flex flex-col space-y-6 items-center">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800 text-center">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
                         Get in Touch
                     </h2>
                     <div className="space-y-4 w-full">
-                        <div className="p-6 bg-gray-50 rounded-lg shadow-md space-y-4">
+                        <div className="p-6 bg-gray-200 rounded-lg shadow-md space-y-4">
                             <div className="flex items-center gap-4 sm:gap-5">
                                 <p className="text-sm sm:text-base text-gray-700 text-center">
                                     Ready to transform your investment approach? Get in touch with Skylife Research today. Let’s build a smarter, more prosperous future together.

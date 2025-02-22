@@ -15,7 +15,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: ChartBarIcon, // Replace with available icon
+    icon: ChartBarIcon, 
   },
   {
     name: "Data-Driven Investment Strategies",
@@ -36,7 +36,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: ArrowTrendingUpIcon, // Replace with available icon
+    icon: ArrowTrendingUpIcon, 
   },
   {
     name: "Innovative Tools and Technology",
@@ -52,7 +52,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: CpuChipIcon, // Replace with available icon
+    icon: CpuChipIcon, 
   },
   {
     name: "Custom Portfolio Management",
@@ -68,7 +68,7 @@ const features = [
         </ul>
       </>
     ),
-    icon: BriefcaseIcon, // Replace with available icon
+    icon: BriefcaseIcon, 
   },
 ];
 
@@ -80,19 +80,21 @@ export default function AboutUs() {
       className="bg-gradient-to-b from-white to-gray-100 shadow-[0_10px_20px_rgba(0,0,0,0.1)] py-14 sm:py-14"
       id="About"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center mx-auto px-4 sm:px-6 lg:px-8">
         {/* What We Do Section */}
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-600">What We Do</h2>
-          <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+        <div className="text-center max-w-2xl">
+          <h2 className="text-base font-semibold text-indigo-600">What We Do</h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
             About Us
           </p>
         </div>
 
         {/* Our Core Technologies Section */}
-        <div className="mx-auto mt-10 max-w-4xl lg:mt-15 lg:text-left">
-          <h3 className="text-xl font-semibold text-gray-900">Our Core Technologies</h3>
-          <ul className="mt-4 space-y-4 text-sm text-gray-600">
+        <div className="mx-auto mt-10 max-w-3xl text-left lg:text-left">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+            Our Core Technologies
+          </h3>
+          <ul className="mt-4 space-y-4 text-sm sm:text-base text-gray-600">
             <li>
               <strong>Network Analysis:</strong> Creating market maps to identify clusters, central stocks, and peripheral opportunities.
             </li>
@@ -109,12 +111,13 @@ export default function AboutUs() {
         </div>
 
         {/* Features Section */}
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl px-6 sm:px-8 md:px-12">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:max-w-none lg:gap-y-16 items-stretch">
+        <div className="mt-16 max-w-5xl sm:mt-20 lg:mt-24 px-4 sm:px-6 lg:px-8">
+          <dl className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature) => (
               <div
                 key={feature.name}
-                className="p-6 bg-gradient-to-r from-gray-50 to-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col"
+                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 
+                   flex flex-col justify-between h-full min-h-[300px]"
               >
                 <dt className="flex items-center text-base font-semibold text-gray-900">
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 mr-4">
@@ -132,6 +135,8 @@ export default function AboutUs() {
 
 
       </div>
+
+
     </div>
   );
 }
