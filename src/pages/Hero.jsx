@@ -123,7 +123,7 @@ export default function Hero() {
             <div className="relative z-10 mx-auto max-w-7xl py-10 flex flex-col items-center text-center">
                 <div className="my-6">
                     <h1 className="text-5xl font-bold tracking-tight text-gray-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]">
-                        Skylife Research
+                        hello world
                     </h1>
                     <h2 className="text-lg text-gray-400 mt-2 max-w-3xl">
                         Redefining portfolio management using graph theory.
