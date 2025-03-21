@@ -123,7 +123,7 @@ const NetworkGraph = ({ data, setHoveredNode, setConnectedNodes, setConnectedLin
     }, [data, setHoveredNode, setConnectedNodes]);
 
     return (
-        <div ref={containerRef} className="h-[400px] overflow-x-auto relative">
+        <div ref={containerRef} className="h-[400px] overflow-x-auto">
             <svg ref={svgRef} className="w-full h-full"></svg>
         </div>
     );

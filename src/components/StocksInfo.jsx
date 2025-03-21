@@ -24,22 +24,27 @@ const StocksInfo = ({ data, setOpen }) => {
     }, [data]);
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+        <div className="fixed inset-0 flex items-center justify-center z-100 bg-black bg-opacity-50 backdrop-blur-sm">
             {/* Modal Container */}
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative max-h-[80vh] overflow-y-auto">
+            <div className="bg-white p-2 rounded-lg shadow-lg w-full max-w-lg relative max-h-[80vh] overflow-y-auto">
 
-                {/* Close Button */}
-                <button
-                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
-                    onClick={() => setOpen(false)}
-                >
-                    ✖
-                </button>
+                <div className=" flex items-center justify-between px-4 py-2 sticky top-0 bg-white z-10">
+                    {/* Close Button - Perfectly Aligned to the Left */}
+                    <button
+                        className="text-gray-500 hover:text-gray-700 text-2xl"
+                        onClick={() => setOpen(false)}
+                    >
+                        ✖
+                    </button>
 
-                {/* Title */}
-                <h2 className="text-xl font-semibold text-gray-900 mb-4 text-center">
-                    Stock Clusters
-                </h2>
+                    {/* Title - Centered Correctly */}
+                    <h2 className="text-xl font-semibold text-gray-900 text-center flex-1">
+                        Stock Clusters
+                    </h2>
+                </div>
+
+
+
 
                 {/* Cluster List with Scrolling */}
                 <div className="space-y-4">

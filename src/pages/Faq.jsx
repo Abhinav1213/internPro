@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ParticlesBg from "particles-bg";
 import "./Faq.css";
 
 const FAQ = () => {
@@ -39,11 +38,10 @@ const FAQ = () => {
 
   return (
     <div className="relative">
-      {/* Particle Background */}
-      <ParticlesBg type="square" bg={true} />
+
 
       {/* FAQ Section */}
-      <div className="relative max-w-4xl mx-auto py-12 px-6 sm:px-10 lg:px-12 xl:px-16 z-10" id="FAQs">
+      <div className="max-w-4xl mx-auto py-12 px-6 sm:px-10 lg:px-12 xl:px-16 z-10" id="FAQs">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-5 lg:mb-10">
           Frequently Asked Questions
         </h2>
@@ -56,9 +54,8 @@ const FAQ = () => {
               >
                 <span className="pr-4 text-base sm:text-lg lg:text-xl">{faq.question}</span>
                 <span
-                  className={`text-gray-500 text-xl sm:text-2xl lg:text-3xl font-semibold ${
-                    openIndex === index ? "rotate-180" : ""
-                  } transition-transform`}
+                  className={`text-gray-500 text-xl sm:text-2xl lg:text-3xl font-semibold ${openIndex === index ? "rotate-180" : ""
+                    } transition-transform`}
                 >
                   {openIndex === index ? "-" : "+"}
                 </span>

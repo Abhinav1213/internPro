@@ -50,7 +50,7 @@ const Footer = () => {
                                 smooth={true}
                                 offset={-70}
                                 duration={500}
-                                className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-all duration-300"
+                                className="text-gray-700 cursor-pointer hover:text-gray-900 text-sm font-medium transition-all duration-300"
                                 onClick={() => handleSection(item)}
                             >
                                 {item.name}

@@ -69,32 +69,32 @@ const features = [
         </ul>
       </>
     ),
-    icon: BriefcaseIcon,
+    icon: BriefcaseIcon, // Replace with available icon
   },
 ];
 
+
+
 export default function AboutUs() {
   return (
-    <div className="relative w-full h-full overflow-hidden" id="About">
-      <div className="absolute inset-0 -z-10">
-        {/* <ParticlesBg type="cobweb" bg={true} /> */}
-      </div>
-      <div className="relative z-10 py-14 sm:py-14">
-        <div className="flex flex-col items-center justify-center mx-auto px-4 sm:px-6 lg:px-8">
+    <div className=" z-10 py-14 sm:py-14">
+      <div
+        className="bg-gradient-to-b from-white to-gray-100 shadow-[0_10px_20px_rgba(0,0,0,0.1)] py-14 sm:py-14 mx-auto max-w-7xl px-6 lg:px-8"
+        id="About"
+      >
+        <div className="mx-auto max-w-7xl">
           {/* What We Do Section */}
-          <div className="text-center max-w-2xl">
-            <h2 className="text-base font-semibold text-indigo-600">What We Do</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-base/7 font-semibold text-indigo-600">What We Do</h2>
+            <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
               About Us
             </p>
           </div>
 
           {/* Our Core Technologies Section */}
-          <div className="mx-auto mt-10 max-w-3xl text-left lg:text-left">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-              Our Core Technologies
-            </h3>
-            <ul className="mt-4 space-y-4 text-sm sm:text-base text-gray-600">
+          <div className="mx-auto mt-10 max-w-4xl lg:text-left">
+            <h3 className="text-xl font-semibold text-gray-900">Our Core Technologies</h3>
+            <ul className="mt-4 space-y-4 text-sm text-gray-600">
               <li>
                 <strong>Network Analysis:</strong> Creating market maps to identify clusters, central stocks, and peripheral opportunities.
               </li>
@@ -111,19 +111,18 @@ export default function AboutUs() {
           </div>
 
           {/* Features Section */}
-          <div className="mt-16 max-w-5xl sm:mt-20 lg:mt-24 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mt-16 max-w-5xl sm:mt-20 lg:mt-24 px-4 sm:px-6 lg:px-8">
             <dl className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {features.map((feature) => (
                 <div
                   key={feature.name}
                   className="p-6 bg-white rounded-lg shadow-md 
-                   hover:shadow-2xl hover:scale-105 hover:bg-gray-100 
-                   transition-transform duration-300 ease-in-out
-                   flex flex-col justify-between h-auto"
+               hover:shadow-2xl hover:scale-105 hover:bg-gray-100 
+               transition-transform duration-300 ease-in-out
+               flex flex-col justify-between h-auto"
                 >
-                  <dt className="flex items-center text-base font-semibold text-gray-900">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 mr-4 
-                        transition-colors duration-300 hover:bg-indigo-700">
+                  <dt className="flex items-center justify-center text-base font-semibold text-gray-900">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 mr-4">
                       <feature.icon aria-hidden="true" className="h-6 w-6 text-white" />
                     </div>
                     {feature.name}
@@ -138,5 +137,7 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
+
+
   );
 }
